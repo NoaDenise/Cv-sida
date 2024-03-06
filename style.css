@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;  
+}
+
+body{
+    background-color: rgba(139, 184, 221, 0.342);
+    font-family: "Roboto", sans-serif;
+}
+
+.aboutlist{
+    list-style-type: none;
+    text-align:center;
+    margin: 10px;
+}
+
+.portdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modesign, .gitlink{
+    background-color: black;
+    padding: 6px 20px ;
+    border-radius: 4rem;
+}
+
+a{
+    text-decoration: none;
+    margin-top: 0.4rem;
+    color: white;
+}
+
+.projectname{
+    font-size: 20px;
+    font-weight: 400;
+}
+header ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+header ul li{
+    padding: 1rem;
+}
+
+header a{
+    text-decoration: none;
+    color:rgba(8, 99, 173, 0.95);
+    padding: 1rem;
+}
+
+h1, h3, p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.contactmenu{
+    background-color: rgba(101, 170, 226, 0.342);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column; 
+    font-size: 20px; 
+    justify-content: center; 
+}
+
+.info{
+    background-color:rgba(8, 99, 173, 0.726);
+    padding: 1rem 1rem;
+    list-style-type: none;
+    margin-top: 10rem;
+    border-radius: 1rem; 
+}
+
+#myinfo{
+    background-color: rgba(139, 184, 221, 0);
+}
+
+.menu a {
+    display: block; /* menyvalen blir blockelement */
+    padding: 0px 30px 0px 30px;
+}
+
+.welcomepagepic{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0em 0em 1em 1em rgba(25, 53, 77, 0.452);
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.active{
+    color:rgba(8, 99, 173, 0.95);
+    font-weight: 650;
+}
+
+.portfolioimg{
+    width: 10%;
+    border-radius: 30%;
+}
+
+@media (min-width: 650px) {
+    .menu {
+        flex-direction: row;
+    }
+}
+
+/* modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* modal innehåll */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* stängknappen för modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* utan denna visas ej modal? */
+.modal:target {
+    display: block;
+}

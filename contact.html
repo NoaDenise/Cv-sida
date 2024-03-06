@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="contactmenu">
+            <ul class="menu">
+                <li><a href="./index.html">Start</a></li>
+                <li><a href="./aboutme.html">About me</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./cv.html">CV</a></li>
+                <li><a class="active" href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <nav id="myinfo">
+            <ul class=" info">
+                <li>Github Profile: <a href="https://github.com/NoaDenise?tab=repositories"><i
+                            class="fab fa-github"></i></a></li>
+                <li>Mail: Testmail@mail.com</li>
+                <li>Phone: 000 000 00 00</li>
+            </ul>
+        </nav>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You found the Easter egg!</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let modal = document.getElementById("myModal");
+            let closeButton = document.querySelector(".close");
+
+            // change background color
+            document.body.addEventListener('click', function (event) {
+                if (!modal.contains(event.target) && !event.target.closest('nav') && !event.target.classList.contains('modesign') && !event.target.classList.contains('gitlink')) {
+                    document.body.style.backgroundColor = getRandomColor();
+                }
+            });
+
+            // show this modal when typing 1337
+            let input = '';
+            const easterEggCode = '1337';
+            window.addEventListener('keydown', function (e) {
+                input += e.key;
+                if (input === easterEggCode) {
+                    showModal();
+                    input = '';
+                } else if (!easterEggCode.startsWith(input)) {
+                    input = '';
+                }
+            });
+
+            // close modal when clicking the close button
+            closeButton.addEventListener('click', function () {
+                modal.style.display = "none";
+            });
+
+            // close modal when clicking outside the modal
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+
+        function getRandomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        function showModal() {
+            let modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+    </script>
+</body>
+</html>
